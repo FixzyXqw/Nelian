@@ -1,6 +1,10 @@
 {
-  "version": "7.3.5",
+  "version": "7.3.6",
   "files": [
+    {
+      "path": "Accessibility.dll",
+      "sha1": "cf9c0085976d65f4294b89d1efd6d74689366bb0"
+    },
     {
       "path": "CmlLib.Core.Auth.Microsoft.dll",
       "sha1": "bbd33d074fdb6bbe91f4b2ac126abd1763793b46"
@@ -12,6 +16,10 @@
     {
       "path": "CmlLib.Core.dll",
       "sha1": "f76bd5cc4e4ba6ea9bb7cbddd723b4d3804df2e2"
+    },
+    {
+      "path": "DirectWriteForwarder.dll",
+      "sha1": "443665e79c22d5b038e51216f846539e16f593b8"
     },
     {
       "path": "DiscordRPC.dll",
@@ -26,8 +34,12 @@
       "sha1": "f77f5a3f19f1ea332384517400684e5c2365e14a"
     },
     {
+      "path": "mscordaccore_amd64_amd64_8.0.2826.26413.dll",
+      "sha1": "02c596fecf01ac8fb76404f0ff7ca25663f7d3e2"
+    },
+    {
       "path": "Nelian.deps.json",
-      "sha1": "8785ddcc2cf7c255be047bc36a2c38f9f2f2fe88"
+      "sha1": "476768eda818149625e3d29ef050504122eaeb5d"
     },
     {
       "path": "Nelian.dll",
@@ -47,7 +59,11 @@
     },
     {
       "path": "Nelian.runtimeconfig.json",
-      "sha1": "aaa1583e8c9809a39a52c73efff1e5e439cfd3df"
+      "sha1": "4a3c93f4fad1945f07699e4f347a0da1f6120b94"
+    },
+    {
+      "path": "netstandard.dll",
+      "sha1": "78c2598df10bc31feee47d770208bcf4e79d02b7"
     },
     {
       "path": "Newtonsoft.Json.dll",
