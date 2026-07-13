@@ -2,10 +2,6 @@
   "version": "7.2.0",
   "files": [
     {
-      "path": "Accessibility.dll",
-      "sha1": "cf9c0085976d65f4294b89d1efd6d74689366bb0"
-    },
-    {
       "path": "CmlLib.Core.Auth.Microsoft.dll",
       "sha1": "bbd33d074fdb6bbe91f4b2ac126abd1763793b46"
     },
@@ -16,10 +12,6 @@
     {
       "path": "CmlLib.Core.dll",
       "sha1": "f76bd5cc4e4ba6ea9bb7cbddd723b4d3804df2e2"
-    },
-    {
-      "path": "DirectWriteForwarder.dll",
-      "sha1": "443665e79c22d5b038e51216f846539e16f593b8"
     },
     {
       "path": "DiscordRPC.dll",
@@ -34,12 +26,8 @@
       "sha1": "f77f5a3f19f1ea332384517400684e5c2365e14a"
     },
     {
-      "path": "mscordaccore_amd64_amd64_8.0.2826.26413.dll",
-      "sha1": "02c596fecf01ac8fb76404f0ff7ca25663f7d3e2"
-    },
-    {
       "path": "Nelian.deps.json",
-      "sha1": "476768eda818149625e3d29ef050504122eaeb5d"
+      "sha1": "8785ddcc2cf7c255be047bc36a2c38f9f2f2fe88"
     },
     {
       "path": "Nelian.dll",
@@ -59,95 +47,15 @@
     },
     {
       "path": "Nelian.runtimeconfig.json",
-      "sha1": "4a3c93f4fad1945f07699e4f347a0da1f6120b94"
-    },
-    {
-      "path": "netstandard.dll",
-      "sha1": "78c2598df10bc31feee47d770208bcf4e79d02b7"
+      "sha1": "aaa1583e8c9809a39a52c73efff1e5e439cfd3df"
     },
     {
       "path": "Newtonsoft.Json.dll",
       "sha1": "e3673d05d46f29e68241d4536bddf18cdd0a913d"
     },
     {
-      "path": "PresentationFramework-SystemCore.dll",
-      "sha1": "09cbdb9677357ec695ff4d1e2012dd881815dcfb"
-    },
-    {
-      "path": "PresentationFramework-SystemData.dll",
-      "sha1": "a08205d65cd948b36b8a376a7c414d960b24234c"
-    },
-    {
-      "path": "PresentationFramework-SystemDrawing.dll",
-      "sha1": "65da4d4acfe4cc69442182bd1e35e180f6c4e339"
-    },
-    {
-      "path": "PresentationFramework-SystemXml.dll",
-      "sha1": "c0cd368b1ae5608ccb93141c9c117d74c658cceb"
-    },
-    {
-      "path": "PresentationFramework-SystemXmlLinq.dll",
-      "sha1": "4165d98337f1f4492525288b57c17b46a09db868"
-    },
-    {
-      "path": "PresentationFramework.Aero.dll",
-      "sha1": "f23bd62ae7bcf27f6356c1a7a26217e294ad1851"
-    },
-    {
-      "path": "PresentationFramework.Aero2.dll",
-      "sha1": "cd273d8fae4498b9ded15a505a08155cce0a8731"
-    },
-    {
-      "path": "PresentationFramework.AeroLite.dll",
-      "sha1": "723e7122addcb48fd82396982285563df3c35301"
-    },
-    {
-      "path": "PresentationFramework.Classic.dll",
-      "sha1": "23ec1209a30422ebfbd636ef6a0ab59f0e7af344"
-    },
-    {
-      "path": "PresentationFramework.Luna.dll",
-      "sha1": "f3bf319b77caba31b4980626bde50d5ff26fd2ab"
-    },
-    {
-      "path": "PresentationFramework.Royale.dll",
-      "sha1": "156d77f6666e4e717bda624bc22faf1ea0cfa83d"
-    },
-    {
       "path": "SevenZip.dll",
       "sha1": "204fd914b84630366c3a656254f39a99a884d8d4"
-    },
-    {
-      "path": "System.CodeDom.dll",
-      "sha1": "232a43a1e1513d27aea3face99dc214784ec6209"
-    },
-    {
-      "path": "System.Configuration.ConfigurationManager.dll",
-      "sha1": "fdcf1bded5ed47b6bb3184e4e5d5bb41bdab9e70"
-    },
-    {
-      "path": "System.Diagnostics.EventLog.dll",
-      "sha1": "d0fc4f4123313b2c99a97bb2f3f454f335185bd1"
-    },
-    {
-      "path": "System.Diagnostics.PerformanceCounter.dll",
-      "sha1": "f8a8686f1e1d2e66bbe32d648c97aeaa1a27c595"
-    },
-    {
-      "path": "System.Drawing.Common.dll",
-      "sha1": "9b3b4e47f745397cad9baa2dcb6ef461bb85516b"
-    },
-    {
-      "path": "System.IO.Packaging.dll",
-      "sha1": "d135a8b15187c9c29e1e8b1973439db0eb16ff51"
-    },
-    {
-      "path": "System.Resources.Extensions.dll",
-      "sha1": "f5967d38bc8eb05f784349517b61cc8effac0334"
-    },
-    {
-      "path": "UIAutomationClientSideProviders.dll",
-      "sha1": "130e22da7d83aecfb5c6d1dc0b4251a44637a194"
     },
     {
       "path": "WebView2Loader.dll",
@@ -159,6 +67,90 @@
     },
     {
       "path": "XboxAuthNet.Game.dll",
+      "sha1": "3a7d8471efe21572509c0dbe255cce40f86c4518"
+    },
+    {
+      "path": "publish/CmlLib.Core.Auth.Microsoft.dll",
+      "sha1": "bbd33d074fdb6bbe91f4b2ac126abd1763793b46"
+    },
+    {
+      "path": "publish/CmlLib.Core.Commons.dll",
+      "sha1": "5cbcf976348e0ec25b316782967630fbb0ffea29"
+    },
+    {
+      "path": "publish/CmlLib.Core.dll",
+      "sha1": "f76bd5cc4e4ba6ea9bb7cbddd723b4d3804df2e2"
+    },
+    {
+      "path": "publish/DiscordRPC.dll",
+      "sha1": "736f87eda0d7a8b1449d860726531237ad30d070"
+    },
+    {
+      "path": "publish/Guna.UI2.dll",
+      "sha1": "adcecd66dca7dfa22b5c3286b0e1d9a930be3af6"
+    },
+    {
+      "path": "publish/ICSharpCode.SharpZipLib.dll",
+      "sha1": "f77f5a3f19f1ea332384517400684e5c2365e14a"
+    },
+    {
+      "path": "publish/Microsoft.Web.WebView2.Core.dll",
+      "sha1": "12bf14a2ad26f568f78e4a9304234a6a990757ba"
+    },
+    {
+      "path": "publish/Microsoft.Web.WebView2.WinForms.dll",
+      "sha1": "f87c665f212a7b8b3393060ca84d2e576e6bced6"
+    },
+    {
+      "path": "publish/Microsoft.Web.WebView2.Wpf.dll",
+      "sha1": "771dcb61c27bdbee4b749ba6d831107756412f77"
+    },
+    {
+      "path": "publish/Nelian.deps.json",
+      "sha1": "8785ddcc2cf7c255be047bc36a2c38f9f2f2fe88"
+    },
+    {
+      "path": "publish/Nelian.dll",
+      "sha1": "661bd479337d6c52319de64494464654fd1f8240"
+    },
+    {
+      "path": "publish/Nelian.dll.config",
+      "sha1": "6862190bc620ed55aeed46d7f51e1d5d29076822"
+    },
+    {
+      "path": "publish/Nelian.exe",
+      "sha1": "47e5ed31de17cd3cc0a1fbc870f36ce6a6d92675"
+    },
+    {
+      "path": "publish/Nelian.pdb",
+      "sha1": "55adb34947679fc8212e751c5c6ffbf8222cbebd"
+    },
+    {
+      "path": "publish/Nelian.runtimeconfig.json",
+      "sha1": "aaa1583e8c9809a39a52c73efff1e5e439cfd3df"
+    },
+    {
+      "path": "publish/Nelian.zip",
+      "sha1": "a6f4c32497eacfe46c18d617ac6d65c4aa6b87f1"
+    },
+    {
+      "path": "publish/Newtonsoft.Json.dll",
+      "sha1": "e3673d05d46f29e68241d4536bddf18cdd0a913d"
+    },
+    {
+      "path": "publish/SevenZip.dll",
+      "sha1": "204fd914b84630366c3a656254f39a99a884d8d4"
+    },
+    {
+      "path": "publish/WebView2Loader.dll",
+      "sha1": "5ce5ea789dcfd04effc7ec2aa40d704bb42cb31b"
+    },
+    {
+      "path": "publish/XboxAuthNet.dll",
+      "sha1": "09425960b7ff6bb6a38be98070ed845d714debaa"
+    },
+    {
+      "path": "publish/XboxAuthNet.Game.dll",
       "sha1": "3a7d8471efe21572509c0dbe255cce40f86c4518"
     }
   ]
