@@ -43,7 +43,7 @@
     },
     {
       "path": "Nelian.dll",
-      "sha1": "1d9b6248dd135d25bdeeb6c052a9f9d85ed2177b"
+      "sha1": "c9fc910fd1a489e27a52abe87d42dbd3df06c39f"
     },
     {
       "path": "Nelian.dll.config",
@@ -55,7 +55,7 @@
     },
     {
       "path": "Nelian.pdb",
-      "sha1": "c69345d64e0dea3dda861436540e497d5e8a8c11"
+      "sha1": "03c0fc9acd86737100dc3b4c18d1502e6016ce2d"
     },
     {
       "path": "Nelian.runtimeconfig.json",
@@ -72,18 +72,6 @@
     {
       "path": "SevenZip.dll",
       "sha1": "204fd914b84630366c3a656254f39a99a884d8d4"
-    },
-    {
-      "path": "Updater.dll.config",
-      "sha1": "c3b58d82ee4cc42bcbe030202120718309a10f35"
-    },
-    {
-      "path": "Updater.exe",
-      "sha1": "ec0a767efbbc860bce222497b29baeb66735dcdd"
-    },
-    {
-      "path": "Updater.pdb",
-      "sha1": "f8be16db78b96448e0405ecadae3e13e322a4ba8"
     },
     {
       "path": "WebView2Loader.dll",
