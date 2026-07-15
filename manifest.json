@@ -1,5 +1,5 @@
 {
-  "version": "7.3.10",
+  "version": "7.4",
   "files": [
     {
       "path": "Accessibility.dll",
@@ -18,6 +18,10 @@
       "sha1": "f76bd5cc4e4ba6ea9bb7cbddd723b4d3804df2e2"
     },
     {
+      "path": "CmlLib.Core.Installer.Forge.dll",
+      "sha1": "d58bb5c4bb3ac77b0281c8a5299511689a61f935"
+    },
+    {
       "path": "DirectWriteForwarder.dll",
       "sha1": "443665e79c22d5b038e51216f846539e16f593b8"
     },
@@ -30,6 +34,10 @@
       "sha1": "adcecd66dca7dfa22b5c3286b0e1d9a930be3af6"
     },
     {
+      "path": "HtmlAgilityPack.dll",
+      "sha1": "dd3219827ecb8928984d20fb915a3d66f2a641f4"
+    },
+    {
       "path": "ICSharpCode.SharpZipLib.dll",
       "sha1": "f77f5a3f19f1ea332384517400684e5c2365e14a"
     },
@@ -39,11 +47,11 @@
     },
     {
       "path": "Nelian.deps.json",
-      "sha1": "476768eda818149625e3d29ef050504122eaeb5d"
+      "sha1": "9c23ea57e103e4c081d232d77977a84e1878aeb9"
     },
     {
       "path": "Nelian.dll",
-      "sha1": "aaddcdb032571e0dba5c6d61857f1a11ac4628a3"
+      "sha1": "53b0a83878cb04864531b3d7aef42decdf58a0f0"
     },
     {
       "path": "Nelian.dll.config",
@@ -55,7 +63,7 @@
     },
     {
       "path": "Nelian.pdb",
-      "sha1": "84c33243b20900901ee73d440fe0a781d57d186a"
+      "sha1": "0762bf9a44e4d25e1a1ebaa8310a42923b1a0f80"
     },
     {
       "path": "Nelian.runtimeconfig.json",
