@@ -1,0 +1,52 @@
+# Nelian Source Available License
+
+**Copyright © 2026 Nelian. All Rights Reserved.**
+
+This repository and all source code, assets, binaries, documentation, and other materials are the intellectual property of Nelian unless otherwise stated.
+
+## Source Availability
+
+The source code provided in this repository is made available solely for **educational, research, auditing, and reference purposes**. You may read and study the code to understand its implementation and learn from it.
+
+This repository is **source-available** and **is not open source**.
+
+No rights are granted beyond viewing and studying the source code.
+
+## Restrictions
+
+Unless explicit written permission is provided by Nelian, you may **NOT**:
+
+* Copy or reproduce any part of this source code.
+* Modify, adapt, or create derivative works from this source code.
+* Redistribute, publish, mirror, or share this source code.
+* Use any portion of this source code in personal, commercial, or open-source projects.
+* Remove or alter any copyright, license, or ownership notices.
+* Claim any part of this project as your own.
+
+## Nelian Software
+
+The **Nelian Launcher**, **Nelian Client**, and every other software project developed by Nelian are proprietary software unless explicitly stated otherwise.
+
+Reverse engineering, decompilation, disassembly, modification, tampering, bypassing protection mechanisms, analysis intended to recreate functionality, or redistribution of any Nelian software is strictly prohibited without prior written permission from Nelian.
+
+## Client Pre-Releases
+
+Certain **pre-release** versions of the Nelian Client may temporarily be distributed with unobfuscated or publicly available source code to assist development, testing, bug reporting, and community feedback.
+
+This does **not** grant permission to copy, modify, redistribute, reuse, or create derivative works from the source code.
+
+Beginning with the first official public release, the Nelian Client will be distributed in an obfuscated form. The temporary availability of unobfuscated pre-release builds does not waive or limit Nelian's copyright or ownership.
+
+## Ownership
+
+All intellectual property rights, including but not limited to source code, binaries, assets, branding, logos, names, and documentation, remain the exclusive property of Nelian.
+
+Viewing this repository or using any Nelian software does not grant ownership or any intellectual property rights.
+
+## Disclaimer
+
+The software and source code are provided "AS IS" without warranties of any kind, express or implied. Nelian shall not be liable for any damages resulting from the use or inability to use the software or source code.
+
+## Acceptance
+
+By accessing this repository or using any Nelian software, you acknowledge that you have read, understood, and agree to comply with the terms of this license.
