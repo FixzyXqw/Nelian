@@ -1,5 +1,5 @@
 {
-  "version": "7.4.4",
+  "version": "7.4.5",
   "files": [
     {
       "path": "Accessibility.dll",
@@ -51,7 +51,7 @@
     },
     {
       "path": "Nelian.dll",
-      "sha1": "e489164ea46210cf760bc0afb5d0c74806c14b34"
+      "sha1": "4063cddeeed02a79848c4515183733cbaa1e86e2"
     },
     {
       "path": "Nelian.dll.config",
@@ -63,7 +63,7 @@
     },
     {
       "path": "Nelian.pdb",
-      "sha1": "371a98d15dd344b1b3d5585f87f2a2d6fa4ef3e6"
+      "sha1": "1ab9b2cfcb934609dec604f8f9578342a1dcdabe"
     },
     {
       "path": "Nelian.runtimeconfig.json",
