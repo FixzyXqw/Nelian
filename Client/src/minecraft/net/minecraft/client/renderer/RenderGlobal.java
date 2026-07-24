@@ -63,6 +63,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
@@ -124,7 +125,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
-
+//FIXED: EntityArmorStand not rendering
 public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListener
 {
     private static final Logger logger = LogManager.getLogger();
@@ -559,12 +560,12 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
             if (flag && !this.vboEnabled)
             {
                 this.renderContainer = new RenderList();
-                this.renderChunkFactory = new ListChunkFactory();
+                this.renderChunkFactory = new NelianRenderChunkFactory();
             }
             else if (!flag && this.vboEnabled)
             {
                 this.renderContainer = new VboRenderList();
-                this.renderChunkFactory = new VboChunkFactory();
+                this.renderChunkFactory = new NelianRenderChunkFactory();
             }
 
             this.generateStars();
@@ -618,9 +619,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
         }
     }
 
-    // ================================================================
-    // NELIAN ENTITY CULLING SİSTEMİ (İÇ SINIF)
-    // ================================================================
+
     private static class NelianEntityCulling
     {
         /**
@@ -630,12 +629,12 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
         public static boolean isEntityVisible(Entity entity, ICamera camera,
                                               double viewX, double viewY, double viewZ)
         {
-            // Görünmez entity'leri (oyuncu değilse) tamamen atla
-            if (entity.isInvisible() && !(entity instanceof EntityPlayer))
-            {
-                return false;
-            }
+         
 
+        	if (entity.isInvisible() && !(entity instanceof EntityPlayer) && !(entity instanceof EntityArmorStand ))
+        	{
+        	    return false;
+        	}
             double distSq = entity.getDistanceSq(viewX, viewY, viewZ);
 
             // Tür bazlı agresif mesafe sınırlandırması
@@ -652,7 +651,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                 if (distSq > 128.0D * 128.0D) return false;
             }
 
-            // Frustum culling (eğer entity ignoreFrustumCheck false ise)
+            // Frustum culling ama eğer entity ignoreFrustumCheck false ise
             if (!entity.ignoreFrustumCheck && camera != null)
             {
                 AxisAlignedBB boundingBox = entity.getEntityBoundingBox();
@@ -895,10 +894,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
             this.theWorld.theProfiler.endStartSection("blockentities");
             RenderHelper.enableStandardItemLighting();
 
-            if (Reflector.ForgeTileEntity_hasFastRenderer.exists())
-            {
-                TileEntityRendererDispatcher.instance.preDrawBatch();
-            }
+         
 
             TileEntitySignRenderer.updateTextRenderDistance();
             label1408:
@@ -956,10 +952,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                          // Nelian: frustum culling (render bounding box)
                             AxisAlignedBB aabb = null;
                             // Use Forge's reflection method to get render bounding box
-                            if (Reflector.ForgeTileEntity_getRenderBoundingBox.exists())
-                            {
-                                aabb = (AxisAlignedBB) Reflector.call(tileentity1, Reflector.ForgeTileEntity_getRenderBoundingBox, new Object[0]);
-                            }
+                           
                             // Fallback for non-Forge or if reflection fails
                             if (aabb == null || aabb.minX == Double.NEGATIVE_INFINITY)
                             {
@@ -1006,7 +999,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
             {
                 for (TileEntity tileentity : this.setTileEntities)
                 {
-                    // Nelian: mesafe ve frustum culling
+                    // Nelian mesafe ve frustum culling
                     Entity player = this.mc.thePlayer;
                     if (player != null)
                     {
@@ -1018,10 +1011,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                     }
                     AxisAlignedBB aabb = null;
                  // Use Forge's reflection method to get render bounding box
-                 if (Reflector.ForgeTileEntity_getRenderBoundingBox.exists())
-                 {
-                     aabb = (AxisAlignedBB) Reflector.call(tileentity, Reflector.ForgeTileEntity_getRenderBoundingBox, new Object[0]);
-                 }
+                
                  // Fallback for non-Forge or if reflection fails
                  if (aabb == null || aabb.minX == Double.NEGATIVE_INFINITY)
                  {
@@ -1049,10 +1039,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                 }
             }
 
-            if (Reflector.ForgeTileEntity_hasFastRenderer.exists())
-            {
-                TileEntityRendererDispatcher.instance.drawBatch(i);
-            }
+           
 
             this.renderOverlayDamaged = true;
             this.preRenderDamagedBlocks();
@@ -1344,22 +1331,13 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
 
             this.mc.mcProfiler.startSection("iteration");
             boolean flag3 = Config.isFogOn();
-
-            // ================================================================
-            // OPTİMİZE EDİLMİŞ GÜVENLİ KAMERA ARKASI CULLING
-            // - Math.sqrt() kaldırıldı, karesel mesafe kullanıldı.
-            // - Bölme işlemi kaldırıldı, yerine çarpma getirildi.
-            // - Render mesafesi öncesi erken eleme eklendi.
-            // - Threshold -0.15'e ayarlandı (daha az pop).
-            // - Gereksiz metod çağrıları azaltıldı.
-            // ================================================================
             final Vector3f lookVec = this.getViewVector(viewEntity, partialTicks);
             final double eyeX = d3;
             final double eyeY = d4 + viewEntity.getEyeHeight();
             final double eyeZ = d5;
             final double minCullDistSq = 16.0D * 16.0D; // 256
             final double maxChunkDistSq = this.renderDistanceSq;
-            final float backCullThreshold = -0.5F;
+            final float backCullThreshold = -0.3F;
 
             while (!deque.isEmpty())
             {
@@ -1412,7 +1390,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                     this.renderInfosTileEntities.add(info);
                 }
 
-                // Komşu chunk'ları kontrol et (orijinal mantık aynen korundu)
+                // Komşu chunkları kontrol et (orijinal mantık aynen korundu)
                 for (EnumFacing enumfacing : flag1 ? ChunkVisibility.getFacingsNotOpposite(info.setFacing) : EnumFacing.VALUES)
                 {
                     if (!flag1 || info.facing == null || compiled.isVisible(info.facing.getOpposite(), enumfacing))
@@ -1429,7 +1407,6 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                     }
                 }
             }
-            // ================================================================
 
             this.mc.mcProfiler.endSection();
         }
@@ -2718,28 +2695,10 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
                 double d4 = (double)blockpos.getY() - d1;
                 double d5 = (double)blockpos.getZ() - d2;
                 Block block = this.theWorld.getBlockState(blockpos).getBlock();
-                boolean flag;
-
-                if (Reflector.ForgeTileEntity_canRenderBreaking.exists())
-                {
-                    boolean flag1 = block instanceof BlockChest || block instanceof BlockEnderChest || block instanceof BlockSign || block instanceof BlockSkull;
-
-                    if (!flag1)
-                    {
-                        TileEntity tileentity = this.theWorld.getTileEntity(blockpos);
-
-                        if (tileentity != null)
-                        {
-                            flag1 = Reflector.callBoolean(tileentity, Reflector.ForgeTileEntity_canRenderBreaking, new Object[0]);
-                        }
-                    }
-
-                    flag = !flag1;
-                }
-                else
-                {
-                    flag = !(block instanceof BlockChest) && !(block instanceof BlockEnderChest) && !(block instanceof BlockSign) && !(block instanceof BlockSkull);
-                }
+                boolean flag = !(block instanceof BlockChest)
+                        && !(block instanceof BlockEnderChest)
+                        && !(block instanceof BlockSign)
+                        && !(block instanceof BlockSkull);
 
                 if (flag)
                 {
